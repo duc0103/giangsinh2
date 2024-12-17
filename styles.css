@@ -8,6 +8,7 @@
 }
 
 body {
+  user-select:unset;
   font-family: Arial, sans-serif;
   background-image: url("/images/tres.png");
   background-size: cover;
