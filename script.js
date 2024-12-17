@@ -14,6 +14,28 @@ document.getElementById("closeButton").addEventListener("click", function () {
   document.getElementById("as").style.display = "block";
 });
 
+const cards = document.querySelectorAll('.card');
+
+cards.forEach((card) => {
+  // Khi bắt đầu ấn chuột
+  card.addEventListener('mousedown', function (e) {
+    e.preventDefault(); // Ngừng hành động mặc định như bôi đen
+
+    // Thêm lớp 'active' để kích hoạt các hành động khi giữ chuột
+    this.classList.add('active');
+  });
+
+  // Khi thả chuột
+  card.addEventListener('mouseup', function () {
+    this.classList.remove('active');
+  });
+
+  // Nếu chuột di chuyển mà không thả (dành cho tình huống di chuyển chuột)
+  card.addEventListener('mouseleave', function () {
+    this.classList.remove('active');
+  });
+});
+
 document.getElementById("showButton").addEventListener("click", function () {
   var guideInfo = document.getElementById("guideInfo");
   var button = document.getElementById("showButton");
